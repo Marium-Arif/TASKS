@@ -1,0 +1,250 @@
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    align-items: center;
+    position: fixed;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffb347;
+    border-bottom: 2px solid #ffb347;
+}
+
+body {
+    background: linear-gradient(180deg, #9b4de2, #667eea, #764ba2);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+     background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+   
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.home h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    animation: fadeSlide 1.2s ease-out;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.home p {
+    font-size: 18px;
+    max-width: 700px;
+    margin-bottom: 15px;
+}
+
+.cta-btn {
+    text-decoration: none;
+    padding: 12px 28px;
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background: #333;
+        transform: scale(1.05);
+    box-shadow: 0 0 10px #fff;
+}
+
+.about-page {
+    padding: 120px 50px;
+    text-align: center;
+    flex: 1;
+}
+
+.about-page h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-page p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.services-page {
+    padding: 120px 50px;
+    text-align: center;
+    flex: 1;
+}
+
+.services-page h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 25px;
+    width: 280px;
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #ffb347;
+}
+
+.contact-page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.container {
+    width: 380px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    backdrop-filter: blur(6px);
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #333;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.bottom-footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 13px;
+    margin-top: auto;
+}
+
+.bottom-footer a {
+    color: #ffb347;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+}

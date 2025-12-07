@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2 class="logo">Marium Arif</h2>
+    </nav>
+    <section class="contact-page">
+        <div class="container">
+            <div class="header">
+                <h1>LOGIN</h1>
+            </div>
+            <div class="main">
+                <form id="loginForm">
+                    <label>Email</label>
+                    <input type="text" id="email">
+
+                    <label>Password</label>
+                    <input type="password" id="password">
+
+                    <button type="submit">Login</button>
+                    <p id="result"></p>
+
+                    <p style="margin-top:15px; text-align:center;">
+                        Don't have an account?
+                        <a href="/register" style="color:#ffd27f;">Register</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bottom-footer">
+        <p>Marium Arif | 
+            <a href="https://github.com/Marium-Arif/TASKS"><img src="images/git.png"></a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            const res = await fetch("/login", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+            document.getElementById("result").innerText = data.message;
+
+            if (data.success) {
+                setTimeout(() => window.location.href = "/home", 1500);
+            }
+        });
+    </script>
+
+</body>
+</html>
